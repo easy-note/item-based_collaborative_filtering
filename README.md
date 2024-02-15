@@ -26,5 +26,6 @@ python run.py
 
 ---
 ## **시각화 예시**
-![loss](./img/sample.jpg)
+![sample1](./img/sample.jpg)
+![sample2](./img/sample2.jpg)
 
