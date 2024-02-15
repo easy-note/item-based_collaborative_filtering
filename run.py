@@ -38,7 +38,7 @@ def draw_img(target, recommends):
         plt.subplot(3,4,sub[i])
         plt.imshow(image)
     
-    plt.savefig('test3.jpg')
+    plt.savefig('sample.jpg')
     
     
 matrix_data = pd.DataFrame(matrix_data)
@@ -47,13 +47,14 @@ knn = NearestNeighbors(metric='cosine', algorithm='brute')
 knn.fit(matrix_data.values)
 distances, indices = knn.kneighbors(matrix_data.values, n_neighbors=9)
 
-idx_for_content = matrix_data.index.tolist().index(0)
+target_id = 1
+idx_for_content = matrix_data.index.tolist().index(target_id)
 sim_contents = indices[idx_for_content].tolist()
 id_movie = sim_contents.index(idx_for_content)
 sim_contents.remove(idx_for_content)
 
 
-target_content = get_contents_id(0)
+target_content = get_contents_id(target_id)
 recommend_contents = []
 for i in sim_contents:
     recommend_contents.append(get_contents_id(i))
