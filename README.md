@@ -20,6 +20,7 @@ pip install -r requirements.txt
 python data_preprocessing.py
 ```
 4. 학습 및 결과 이미지 생성
+- 50line 의 target_id 의 결과를 시각화하여 볼 수 있습니다.
 ```
 python run.py
 ```
