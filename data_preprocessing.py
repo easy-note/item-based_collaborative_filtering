@@ -5,7 +5,6 @@ import pickle
 
 df = pd.read_parquet('./data/rec-exam.parquet', engine = 'pyarrow', columns=['content_id', 'user_id'])
 df['click_count'] = df.groupby(['content_id', 'user_id'])['user_id'].transform('size')
-df = df[df['click_count']>=10]
 
 df = df.drop_duplicates(subset=['content_id', 'user_id'])
 contents = list(set(df['content_id'].tolist()))
